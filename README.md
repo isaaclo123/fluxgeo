@@ -19,6 +19,6 @@ To run the script, run "fluxgeo" in a terminal.
 The script can be placed in an autostart file, /etc/rc.local, and more.
 
 ##Software credit
-* This product includes GeoLite data created by MaxMind, available from http://www.maxmind.com
-* This softawre uses xflux (https://justgetflux.com/)
+* This product includes GeoLite data created by MaxMind, available from (http://www.maxmind.com)
+* This software uses xflux (https://justgetflux.com/)
 * This software uses Python 2.7 (https://www.python.org/)
