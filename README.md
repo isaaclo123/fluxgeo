@@ -4,10 +4,10 @@
 Fluxgeo is a simple python script for linux-based systems that pipes your location data to xflux. It is intended as addon to the f.lux project, a project that helps computer users sleep easier. You can find more information about them on https://justgetflux.com/.
 
 ##Dependencies
-xflux (https://justgetflux.com/linux.html) [will be installed]
-GeoLite City (http://dev.maxmind.com/geoip/legacy/geolite/) [will be installed]
-geoip-bin, geoip-database
-Python 2.7
+-xflux [will be installed by setup script]
+-GeoLite City [will be installed by setup script]
+-geoip-bin, geoip-database
+-Python 2.7
 
 ##Installation
 1. Make sure geoip-bin, geoip-database, and Python 2.7 are installed.
