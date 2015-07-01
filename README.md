@@ -12,11 +12,14 @@ Fluxgeo is a simple python script for linux-based systems that pipes your locati
 ##Installation
 1. Make sure geoip-bin, geoip-database, and Python 2.7 are installed.
 2. In a terminal window, "cd" to the fluxgeo directory.
-3. Run "sudo sh setup.sh" (without quotation marks).
+3. Run "sh setup.sh" without quotation marks. (you will have to type in your sudo password during the installation)
 
 ##Usage
 To run the script, run "fluxgeo" in a terminal.
 The script can be placed in an autostart file, /etc/rc.local, and more.
+
+##New additions
+* Fluxgeo now can be run offline, and saves its previous lattitude and longitude to "~/.fluxgeo".
 
 ##Software credit
 * This product includes GeoLite data created by MaxMind, available from (http://www.maxmind.com)

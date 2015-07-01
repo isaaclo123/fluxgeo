@@ -1,17 +1,12 @@
 #!/bin/sh
 
-if [ "$(id -u)" != "0" ]; then
-   echo "This install script must be run as root" 1>&2
-   exit 1
-fi
-
 echo "FluxGeo Installation"
 
 read -p "Would you like to install this script? [y/n]" response
     case $response in [yY])
 
       echo "Stopping xflux daemon"
-      kill xflux
+      killall xflux
 
       echo "Installing xflux"
        if [ "$(uname -m | grep '64')" != "" ]; then
@@ -30,10 +25,20 @@ read -p "Would you like to install this script? [y/n]" response
       sudo cp fluxgeo.py /usr/local/bin/fluxgeo
       sudo chmod +x /usr/local/bin/fluxgeo
 
-      echo "Starting fluxgeo"
-      fluxgeo
+      echo "Setting up fluxgeo"
+      mkdir ~/.fluxgeo
+      chmod 777 ~/.fluxgeo
+
+      touch ~/.fluxgeo/lat
+      echo "0" >> ~/.fluxgeo/lat
+      chmod 777 ~/.fluxgeo/lat
+
+      touch ~/.fluxgeo/long
+      echo "0" >> ~/.fluxgeo/long
+      chmod 777 ~/.fluxgeo/long
 
       echo "Installation Finished"
+      echo "Starting fluxgeo"
         ;;
 
     *)
