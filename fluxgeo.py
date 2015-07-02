@@ -3,6 +3,7 @@
 __author__ = "Isaac Lo"
 __copyright__ = "Copyright (C) 2015 Isaac Lo"
 
+import argparse
 import subprocess
 import sys
 import httplib
@@ -16,12 +17,16 @@ def run(args):
     subprocess.call(args, shell = True)
 
 def have_internet():
-    conn = httplib.HTTPConnection("minecraft.net")
+    conn = httplib.HTTPConnection("justgetflux.com")
     try:
         conn.request("HEAD", "/")
         return True
     except:
         return False
+
+parser = argparse.ArgumentParser()
+parser.add_argument("-k", "-colortemp", type=int, help="Change xflux's color temperature")
+args = parser.parse_args()
 
 home = os.path.expanduser('~/.fluxgeo')
 
@@ -54,6 +59,13 @@ elif have_internet() == False:
     long = str(thelong.readline()).rstrip()
 
 run("killall xflux")
-run("xflux -l " + lat + " -g " + long)
+
+if args.k:
+
+    run("xflux -l " + lat + " -g " + long + " -k " + str(args.k))
+
+else :
+
+    run("xflux -l " + lat + " -g " + long)
 
 sys.exit(0)

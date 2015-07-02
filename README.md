@@ -20,6 +20,7 @@ The script can be placed in an autostart file, /etc/rc.local, and more.
 
 ##New additions
 * Fluxgeo now can be run offline, and saves its previous lattitude and longitude to "~/.fluxgeo".
+* Fluxgeo can now change the color temperature setting of xflux through command-line arguments by appending "-k" and the desired color temperature.
 
 ##Software credit
 * This product includes GeoLite data created by MaxMind, available from (http://www.maxmind.com)
